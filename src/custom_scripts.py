@@ -20,3 +20,37 @@ def df_to_markdown_table(df):
     markdown_table = df.to_markdown()
     print(markdown_table)
     display(Markdown(markdown_table))
+
+def requirements():
+    requirements = [
+        "pandas",
+        "biopython",
+        "ipython",
+        "ipywidgets",
+        "tabulate",
+        "jupyterlab-spreadsheet-editor"
+    ]
+
+    requirements = "\n".join(requirements)
+    with open("./requirements.txt", "w") as f:
+        f.write(requirements)
+
+def mkdir(folders):
+    import os
+    for x, y in folders.items():
+        folder = f"{y}"
+        os.makedirs(folder, exist_ok = True)
+        with open(f"{folder}/index.md", "w") as f:
+            f.write(f"""<a id="{x}"></a>
+---
+title: {x.replace("_", " ").title()}
+---""")
+
+def static_badge(link, label, color, size = 30, logo = "", logo_color = "", ):
+    from IPython.display import display, HTML
+    if logo == "":
+        badge = f"""<a href="{link}"><img alt="{label}" src="https://img.shields.io/badge/{label.replace(" ", "_")}-{color}?style=for-the-badge"  height="{size}"></a>"""
+    else:
+        badge = f"""<a href="{link}"><img alt="{label}" src="https://img.shields.io/badge/{label.replace(" ", "_")}-{color}?style=for-the-badge&logo={logo}&logoColor={logo_color}" height = "{size}"></a>"""
+    print(badge)
+    display(HTML(badge))
