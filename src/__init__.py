@@ -1,6 +1,9 @@
 from .custom_scripts import csv
 from .custom_scripts import markdown_to_html
 from .custom_scripts import df_to_markdown_table
+from .badges import static_badge
+from .badges import custom_badge
+
 
 #from .protocol import protocol
 #from .search_strategy import search_strategy

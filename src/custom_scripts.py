@@ -18,5 +18,5 @@ def df_to_markdown_table(df):
     import markdown
     df = df
     markdown_table = df.to_markdown()
+    print(markdown_table)
     display(Markdown(markdown_table))
-    
