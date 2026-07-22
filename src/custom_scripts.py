@@ -54,3 +54,12 @@ def static_badge(link, label, color, size = 30, logo = "", logo_color = "", ):
         badge = f"""<a href="{link}"><img alt="{label}" src="https://img.shields.io/badge/{label.replace(" ", "_")}-{color}?style=for-the-badge&logo={logo}&logoColor={logo_color}" height = "{size}"></a>"""
     print(badge)
     display(HTML(badge))
+
+
+def icon(link, img, width = 25, height = 25):
+    icon = f"""<a href="{link}"><img alt = "" src="{img}" width="{width}" height="{height}"></a>"""
+    print(icon)
+    import ipywidgets as widgets
+    from IPython.display import display, HTML
+    display(HTML(icon))
+    return icon

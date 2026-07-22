@@ -4,11 +4,7 @@ from .custom_scripts import df_to_markdown_table
 from .custom_scripts import requirements
 from .custom_scripts import mkdir
 from .custom_scripts import static_badge
-
-from .badges import static_badge
-from .badges import custom_badge
-from .mkdir import mkdir
-from .requirements import requirements
+from .custom_scripts import icon
 
 from .protocol import eligibility_criteria
 #from .search_strategy import search_strategy
