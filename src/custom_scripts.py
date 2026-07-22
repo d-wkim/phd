@@ -35,15 +35,14 @@ def requirements():
     with open("./requirements.txt", "w") as f:
         f.write(requirements)
 
-def mkdir(folders):
+def mkdir(root, folders, filename = "index.md"):
     import os
-    for x, y in folders.items():
-        folder = f"{y}"
-        os.makedirs(folder, exist_ok = True)
-        with open(f"{folder}/index.md", "w") as f:
-            f.write(f"""<a id="{x}"></a>
----
-title: {x.replace("_", " ").title()}
+    for folder in folders:
+        directory = f"{root}/{folder}"
+        os.makedirs(directory, exist_ok = True)
+        with open(f"{directory}/{filename.replace(".md", "")}.md", "w") as f:
+            f.write(f"""---
+title: {folder.replace("_", " ").title()}
 ---""")
 
 def static_badge(link, label, color, size = 30, logo = "", logo_color = "", ):
