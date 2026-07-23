@@ -45,6 +45,18 @@ def mkdir(root, folders, filename = "index.md"):
 title: {folder.replace("_", " ").title()}
 ---""")
 
+# +
+def badge(label, right, label_color, right_color, style = "for-the-badge", logo = "", logo_color = "", logo_size = "auto", left = ""):
+        badge = f"""<img alt="Static Badge" src="https://img.shields.io/badge/{left}-{right}-{right_color}?style={style}&logo={logo}&logoColor={logo_color}&logoSize={logo_size}&label={label}&labelColor={label_color}&color={right_color}">"""
+        print(badge)
+        from IPython.display import display, HTML
+        display(HTML(badge))
+
+badge_html("Left", "Right", "blue", "black")
+# -
+
+
+
 def static_badge(link, label, color, size = 30, logo = "", logo_color = "", ):
     from IPython.display import display, HTML
     if logo == "":
